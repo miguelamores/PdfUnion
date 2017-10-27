@@ -28,7 +28,7 @@ public class PdfUnionController {
 		this.pdfUnionService = pdfUnionService;
 	}
 
-	@RequestMapping(method = RequestMethod.GET, produces = "application/pdf", value = "/{cedula}")
+	@RequestMapping(method = RequestMethod.GET, produces = "application/pdf", value = "{cedula}")
 	public ResponseEntity<?> getPdf(@PathVariable String cedula) {
 		System.out.println("Generando pdf...");
 		ByteArrayOutputStream baos = pdfUnionService.unirPdf(cedula);
